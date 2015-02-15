@@ -1,0 +1,73 @@
+% BUSINESS CARD template
+% created by Karol Kozioł (www.karol-koziol.net)
+% for ShareLaTeX - online LaTeX editor (www.sharelatex.com)
+% May 2013
+
+\documentclass[10pt]{article}
+\usepackage[dvips]{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{xcolor}
+\usepackage{tikz}
+
+\usepackage{geometry}
+\geometry{total={210mm,297mm},hmargin=10mm,vmargin=2mm}
+
+\pagestyle{empty}
+
+\renewcommand\familydefault{\sfdefault}
+\usepackage{tgadventor}
+
+%%% BUSINESS CARD SIZE
+\newlength{\cardw}
+\newlength{\cardh}
+%% ISO 7810 size: 85.60mm × 53.98mm
+\setlength{\cardw}{85.60mm}
+\setlength{\cardh}{53.98mm}
+%% European size: 85mm × 55mm
+%\setlength{\cardw}{85mm}
+%\setlength{\cardh}{55mm}
+%% US size: 3.5 in × 2 in
+%\setlength{\cardw}{3.5in}
+%\setlength{\cardh}{2in}
+
+
+%%% DEFINE USER DATA
+\newcommand{\Name}{
+{\huge \textbf{Joe Doe}}
+}%
+\newcommand{\Description}{
+{\large CEO of XYZ Company}
+}%
+\newcommand{\Email}{
+joe.doe@emails.com
+}%
+\newcommand{\Phone}{
++44 123456789
+}%
+%%%
+
+
+\begin{document}
+
+\begin{tikzpicture}
+% grid
+\foreach \i in {0,1,2,3,4,5} \draw[very thin, gray,dashed] (0,\i*\cardh) -- (2*\cardw,\i*\cardh);
+\foreach \j in {0,1,2} \draw[very thin, gray,dashed] (\j*\cardw,0) -- (\j*\cardw,5*\cardh);
+% card content
+\foreach \i in {0,1} \foreach \j in {0,1,2,3,4} {
+   \node at (\i*\cardw+0.2\cardw,\j*\cardh+0.5\cardh) {\includegraphics[width=0.2\cardw]{logo}};
+% center text
+   \node[black!25!gray] at (\i*\cardw+0.65\cardw,\j*\cardh+0.75\cardh) {\Name};
+   \node at (\i*\cardw+0.65\cardw,\j*\cardh+0.55\cardh) {\Description};
+   \node at (\i*\cardw+0.65\cardw,\j*\cardh+0.35\cardh) {\Phone};
+   \node at (\i*\cardw+0.65\cardw,\j*\cardh+0.2\cardh) {\Email};
+% align text left
+%    \node[black!25!gray,right] at (\i*\cardw+0.4\cardw,\j*\cardh+0.75\cardh) {\Name};
+%    \node[right] at (\i*\cardw+0.4\cardw,\j*\cardh+0.55\cardh) {\Description};
+%    \node[right] at (\i*\cardw+0.4\cardw,\j*\cardh+0.35\cardh) {\Phone};
+%    \node[right] at (\i*\cardw+0.4\cardw,\j*\cardh+0.2\cardh) {\Email};
+};
+\end{tikzpicture}
+
+\end{document}
