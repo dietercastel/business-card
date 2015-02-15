@@ -2,6 +2,9 @@
 % created by Karol Kozioł (www.karol-koziol.net)
 % for ShareLaTeX - online LaTeX editor (www.sharelatex.com)
 % May 2013
+% Addition: QR code support
+% by Dieter Castel
+% February 2015
 
 \documentclass[10pt]{article}
 \usepackage[dvips]{graphicx}
@@ -9,6 +12,8 @@
 \usepackage[T1]{fontenc}
 \usepackage{xcolor}
 \usepackage{tikz}
+%Add package to provide QR code
+\usepackage{qrcode}
 
 \usepackage{geometry}
 \geometry{total={210mm,297mm},hmargin=10mm,vmargin=2mm}
@@ -25,16 +30,22 @@
 \setlength{\cardw}{85.60mm}
 \setlength{\cardh}{53.98mm}
 %% European size: 85mm × 55mm
-%\setlength{\cardw}{85mm}
-%\setlength{\cardh}{55mm}
+% \setlength{\cardw}{85mm}
+% \setlength{\cardh}{55mm}
 %% US size: 3.5 in × 2 in
 %\setlength{\cardw}{3.5in}
 %\setlength{\cardh}{2in}
 
 
 %%% DEFINE USER DATA
+\newcommand{\Surname}{
+Doe
+}%
+\newcommand{\Firstname}{
+Joe
+}%
 \newcommand{\Name}{
-{\huge \textbf{Joe Doe}}
+{\huge \textbf{\Firstname \Surname}}
 }%
 \newcommand{\Description}{
 {\large CEO of XYZ Company}
@@ -45,18 +56,29 @@ joe.doe@emails.com
 \newcommand{\Phone}{
 +44 123456789
 }%
-%%%
+\newcommand{\Website}{
+http://joedoe.net
+}%
 
+%MeCard command to include in QR Code
+\newcommand{\MeCard}{
+MECARD:N:\Firstname,\Surname;TEL:\Phone;EMAIL:\Email;URL:\Website;;
+}
+%Content of the QR Code
+\newcommand{\TheQRContent}{
+\MeCard
+}
 
 \begin{document}
-
 \begin{tikzpicture}
 % grid
 \foreach \i in {0,1,2,3,4,5} \draw[very thin, gray,dashed] (0,\i*\cardh) -- (2*\cardw,\i*\cardh);
 \foreach \j in {0,1,2} \draw[very thin, gray,dashed] (\j*\cardw,0) -- (\j*\cardw,5*\cardh);
 % card content
 \foreach \i in {0,1} \foreach \j in {0,1,2,3,4} {
-   \node at (\i*\cardw+0.2\cardw,\j*\cardh+0.5\cardh) {\includegraphics[width=0.2\cardw]{logo}};
+   % Comment out the correct line to use either a logo or QR Code
+   % \node at (\i*\cardw+0.2\cardw,\j*\cardh+0.5\cardh) {\includegraphics[width=0.2\cardw]{logo}};
+   \node at (\i*\cardw+0.2\cardw,\j*\cardh+0.5\cardh){\qrcode[nolinks, height=0.3\cardw]{\TheQRContent}};
 % center text
    \node[black!25!gray] at (\i*\cardw+0.65\cardw,\j*\cardh+0.75\cardh) {\Name};
    \node at (\i*\cardw+0.65\cardw,\j*\cardh+0.55\cardh) {\Description};
