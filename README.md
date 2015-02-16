@@ -1,5 +1,5 @@
 # business-card
-The starting point of this template is [this one](https://www.sharelatex.com/templates/other/business-card) provided by [ShareLaTeX](https://www.sharelatex.com) and originally made by [Karol Koziol](http://www.karol-koziol.net/tex/).
+The starting point of this template is [this one](https://www.sharelatex.com/templates/other/business-card) provided by [ShareLaTeX](https://www.sharelatex.com) and originally made by [Karol Koziol](http://www.karol-koziol.net/tex/). Feel free to (re-)use, fork, modify and contribute to this project as long as you reference the original author(s) if you do so. This in accordance with the Apache 2.0 License included in this repository.
 
 # QR Code and MeCard support
 This template supports adding a QR Code that contains the MeCard format so adding a contact to your phone is very easy.
