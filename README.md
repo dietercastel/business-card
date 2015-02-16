@@ -7,7 +7,8 @@ The specifications for the MeCard format can be found [here](https://www.nttdoco
 
 #Result
 [![Pdf Status](https://www.sharelatex.com/github/repos/dietercastel/business-card/builds/latest/badge.svg)](https://www.sharelatex.com/github/repos/dietercastel/business-card/builds/latest/output.pdf)
-I included three examples in the pdf to show the potential of the template. Below I included images of these examples:
+
+I included three different examples in the pdf (see above) to show the potential of the template. Below I also included images of these examples:
 
 ##Example 1
 Example with QR code instead of logo.
