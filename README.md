@@ -6,9 +6,8 @@ This template supports adding a QR Code that contains the MeCard format so addin
 The specifications for the MeCard format can be found [here](https://www.nttdocomo.co.jp/english/service/developer/make/content/barcode/function/application/addressbook/index.html). Three examples are provided two of which have a QR Code. You can reuse these very easily if you replace the contact details with your own in within the command definitions.
 
 # Result
-[![Pdf Status](https://www.sharelatex.com/github/repos/dietercastel/business-card/builds/latest/badge.svg)](https://www.sharelatex.com/github/repos/dietercastel/business-card/builds/latest/output.pdf)
 
-I included three different examples in the pdf (see above) to show the potential of the template. Below I also included images of these examples:
+I included three different examples [in the pdf](https://github.com/dietercastel/business-card/blob/master/card.pdf) to show the potential of the template. Below I also included images of these examples:
 
 ## Example 1
 Example with QR code instead of logo.
